@@ -2,32 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>我的网页</title>
 </head>
-<body>
+<body style="height: 4500px;">
     <h1>1111</h1>
     <h2>2222</h2>
     <h3>3333</h3>
+    <img src="a.jpg">
+    <img src="../h.jpg">
+
     <ul>
-        <P>段落段落段落</P>
+       <li>
+           <div>
+               <p>ul和ol与li之间是亲子关系</p>
+           </div>
+       </li>
         <li>性别</li>
         <li>年龄</li>
     </ul>
     <ol>
+        
         <li>性别</li>
         <li>年龄</li>
     </ol>
     <div>
-        我是赵闯1
+        我是<span style="color: blue">赵闯1</span>
     </div>
     <div>
-        我是赵闯2
+        我是<span style="color:red ">赵闯2</span>
     </div>
     <div>
-        我是赵闯3
+        <strong>我是<span style="color:yellow">赵闯3</span></strong>
     </div>
     <span>
-        唯创
+        <strong>唯创</strong>
     </span>
     <span>
         唯创
@@ -43,7 +51,72 @@
             <td>55</td>
             <td>66</td>
         </tr>
+        <tr>
+            <td>12</td>
+            <td>34</td>
+            <td>56</td>
+            </tr>
     </table>
+
+
+    <form>
+        
+      <span>
+        <label for="aa">用户名：</label>
+        <input id="aa" type="text">
+      </span>
+       <br>  
+        <span>
+        <label for="bb">密码：</label>
+        <input id="bb" type="password"> 
+       </span>
+           
+       
+        <br>  
+   
+        <!-- 单选框-->
+        <input type="radio" name="sex">男
+        <input type="radio" name="sex">女
+        <br/>
+        <!-- 多选框 -->
+        <input type="checkbox"name="hobby">足球
+        <input type="checkbox"name="hobby">篮球
+        <input type="checkbox"name="hobby">乒乓球
+        <!-- 下拉框 -->
+         <select>
+         <option value="">16级</option>
+         <option value="">17级</option>
+         <option value="">18级</option>
+        </select>
+        <select>
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+        <option value="">4</option>
+        </select>
+        
+        <!-- 文本域 -->
+        <textarea></textarea> 
+        <button>提交</button>
+        <input type="submit" value="提交表单">
+
+
+        <!-- 
+            行级元素  多个一行 不可设置宽高
+            a labal span b
+            块级元素 自己一行 可以设置宽高
+            p ul ol li div table
+         -->
+
+        
+        
+       
+
+
+
+
+
+    </form>
     
 </body>
 </html>
