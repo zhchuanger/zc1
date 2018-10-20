@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link>
+    <!-- <link rel="stylesheet" href="test.css"> -->
+    <style>
+        /* id选择器 */
+        #aa{
+            background-color: pink;
+            }
+        .bb{
+            background-color: green;
+            }
+        li{
+            color: red;
+            list-style: none;
+            background-color: blueviolet;
+        }
+        /* 子代选择器 */
+        #cc >li{
+            background: yellow;
+        }
+        /* 群组选择器 */
+    
+        #aa,.bb{
+            color: orange;
+        }
+        a:hover{
+            color: cyan;
+        }
+    
+    
+    
+    </style>
+</head>
+<body>
+
+    <div id="aa">
+    我是赵闯
+    </div>
+    <ul>
+        <li class="bb">111</li>
+        <li>222</li>
+        <li class="bb">333</li>
+    </ul>
+    <ul id="cc">
+            <li >111
+                <ul>
+                    <li>a</li>
+                    <li>b</li>
+                </ul>
+            </li>
+            <li>222</li>
+            <li >333</li>
+        </ul>
+        <a href="http://www.baidu.com" target="_blank">百度</a>
+
+
+
+    
+</body>
+</html>

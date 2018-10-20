@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 50px;
+            display: inline-block; 
+            /* display: block; */
+
+        }
+    #div1{
+        background-color: firebrick;
+
+    }
+    #div2{
+        background-color: green;
+        /* position: relative; 
+        left:50px;
+        top: 10px; */
+        position:absolute;
+
+    }
+    #div3{
+        background-color: blue;
+    }
+    /* position
+    相对定位：relative 相对于自己原来位置 定位后空间不释放
+    绝对定位：absolute  相对于最近已定位的祖先元素 如果没有 就相对于body 
+                        定位后空间释放
+    固定位置： fixed  相对于浏览器  空间释放 定位后空间释放 
+    默认的   ： static */
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div id="div1"> 
+        111
+    </div><div id="div2">
+        222
+    </div><div id="div3">
+        333
+    </div>
+    
+</body>
+</html>
