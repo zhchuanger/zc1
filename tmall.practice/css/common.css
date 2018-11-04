@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/* banner开始 */
+.banner{
+    background-color: #ff2f7c;
+    text-align: center;
+}
+.banner img{
+    display:block;
+    margin: 0 auto;
+}
+/* banner结束 */
+/* header开始 */
+#header{
+    background: #f2f2f2;
+    height: 40px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.30);
+    margin-bottom: 4px;
+}
+#wrapper{
+    width: 1230px;
+    height: 40px;
+    margin: 0 auto;
+}
+#header-login{
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    float: left;
+}
+#header-login span ,#header-login a{
+    color:#999;
+}
+#header-login a{
+    padding-left: 20px;
+}
+#header-login a:hover{
+    color: #ff0036;
+
+}
+.header-list{
+    float: right; 
+    position: relative;
+}
+
+.header-list>li{
+    float: left;
+    position: relative; 
+}
+.header-list>li>a{
+    color: #999;
+    height: 40px;
+    line-height: 40px; 
+    padding: 0 15px 0 20px;
+    display: block;
+}
+.header-list>li>a:hover{
+    color: #ff0036;
+}
+.icon-gouwucheman,.icon-mobile,.icon-daohang{
+    color: #ff0036;
+    font-size: 12px;
+}
+.arrow{
+    width: 0;
+    height: 0;
+    border:3px solid transparent;
+    border-top-color:#999;
+    position: absolute;
+    right:7px;
+    top:20px;
+    transition: transfrom 5s ease;
+} 
+.header-list .list-menu:hover .arrow{
+    transform: rotate(180deg);
+    transform-origin: 50% 25%;
+    
+}
+.list-menu:hover .sub-list{
+    display: block;
+
+}
+.list-menu:hover{
+    background:#fff;
+    text-decoration: underline;
+
+}
+.list-menu-no:hover{
+    color: #999;
+    text-decoration: none;
+    
+}
+.sub-list{
+    position: absolute;
+    left: 0;
+    top: 40px;
+    background:#fff;
+    border: 1px solid #eee;
+    padding: 10px 8px;
+    width: 74px;
+    line-height: 30px;
+    color: #999;
+    display: none; 
+}
+.sub-list a{
+    color: #999;
+}
+.sub-list a:hover{
+    color: #ff0036;
+    text-decoration: underline;
+}
+.sub-qr{
+    position: absolute;
+    left:-39px;
+    top: 31px;
+    box-shadow: 0 0 3px 1px rgba(0,0,0,0.3);
+    display: none;
+}
+
+.sub-qr::after{
+    content: "";
+    width: 0;
+    height: 0;
+    border:5px solid transparent;
+    border-bottom-color:#fff;
+    position: absolute;;
+    left:50%;
+    top: -10px;
+    margin-left: -10px;
+}
+.list-tel:hover .sub-qr{
+    display: block;
+}
+.sub-list:hover .list-menu>a{
+    color: #ff0036
+}
