@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        //对象直接量
+        var person1 = {
+            height:162,
+            school:'黑龙江大学',
+            name:'赵闯',
+            play:function(){
+                //this指的是当前对象 person1d的play,当前对象的引用
+                console.log(this.name+"在吃饭");
+            }
+        }
+        console.log(person1.name,person1.school);
+        person1.play();
+        var person2 =new Object();
+        person2.name = "xx";
+        person2.school ="xxx";
+        person2.sleep = function(){
+            console.log("我正在。。");
+        }
+        console.log(person2.name);
+        person2.sleep();
+
+
+
+
+        
+
+
+
+
+
+
+
+    
+    
+    
+    
+    </script>
+
+
+    
+</body>
+</html>
