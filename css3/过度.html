@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 200px;
+        height: 200px;
+        background: #ff0036;
+        /* 触发条件  */
+        /* transition: width 2s ease 1s; */
+        /* 动画名 执行时间 方式 延迟时间 运动几次 运动最终状态 */
+        /* forwards 不会回到初始状态 保持最终状态 */
+        animation: run 2s ease 2s  forwards;
+    }
+    /* div:hover{
+        width: 800px;
+    } */
+    @keyframes run{
+        0%{
+
+        }
+        30%{
+            width: 500px;
+        }
+        70%{
+            width: 200px;
+        }
+        100%{
+            width: 800px;
+        }
+
+    }
+    </style>
+</head>
+<body>
+    <div id="div0">
+
+    </div>
+    
+</body>
+</html>
