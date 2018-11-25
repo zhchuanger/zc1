@@ -651,8 +651,8 @@
 }
 .cainixihuan {
     height: 43px;
-    background: #10df77;
-    margin-top: 40px;
+    /* background: #10df77; */
+    margin-top: 30px;
     /* line-height: 43px; */
     text-align: center;
 }
@@ -660,19 +660,194 @@
     color: #666;
     font-size: 20px;
     padding-left: 2px;
+    
 }
 .cainixihuan .icon-love_icon{
     color: #ff0036;
     font-size: 18px;
 }
 
-.cainixihuan .icon-love_icon::after{
-    content: '';
-    position: absolute;
-    display: block;
-    width: 30px;
-    height: 1px;
-    background-color: #979797;
-    top: 12px;
 
+.cainixihuan-content{
+    width: 1230px;
+    height: 1310px;
+    /* background: #15f082; */
+}
+.cainixihuan-content .cainixihuan-content-page{
+    width: 237px;
+    height: 317px;
+    background:#fff;
+    margin:0 7px 7px 0;
+    margin-bottom:14px;
+    position: relative;
+    float:left;
+}
+.cainixihuan-content .cainixihuan-content-page img{
+    width: 185px;
+    height: 185px;
+    margin-top: 20px;
+    margin-left: 25px;
+}
+.cainixihuan-content-page-text{
+    width: 135px;
+    height: 40px;
+    /* background: #86f81c; */
+    margin: 8px auto;
+    overflow:hidden;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    font-size:14px;
+    color:#666;
+    
+    
+}
+.cainixihuan-content-page-money{
+    width: 211px;
+    height: 33px;
+    margin:14px 6px;
+    color: #ff0036;
+    line-height: 32px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    text-align: center;
+    font-size:18px;
+    
+}
+.page-clear{
+    position: absolute;
+    left:0px;
+    top:0px;
+    bottom:0px;
+    right:0px;
+    background:rgba(255,255,255,0.25);
+    border: 0.5px solid #ff0036;
+    display: none;
+
+}
+.cainixihuan-content-page:hover .page-clear{
+    display: block;
+    cursor: pointer;
+    
+}
+.tm-end-show{
+    text-align: center;
+}
+.tm-end-show img{
+    width: 80px;
+    height: 45px;
+}
+.footer{
+    width: 1519.200px;
+    height: 581.200px;
+    background: #fff;
+    border-top: 1px solid #D1D7DC;
+    margin-top:7px;
+    font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+}
+.footer .footer-one{
+    width: 1190px;
+    height: 100px;
+    margin:25px 164.600px;
+}
+.footer .footer-two{
+    width: 1190px;
+    height: 190px;
+    margin: 0 164.600px ;
+    padding-top: 20px;
+    border-top: 1px solid #ededed;
+
+}
+.footer-two .footer-two-child1{
+    width: 186px;
+    height: 90px;
+    /* background: #10df77; */
+    padding-left: 52px;
+    float:left;
+}
+.footer-two .footer-two-child1>span{
+    color: #646464;
+    font-size: 16px;
+    font-weight: 700;
+    /* font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif; */
+}
+.footer-two .footer-two-child1 li{
+    color: #8b8b8b;
+    /* font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif; */
+    height: 20px;
+    
+}
+.footer-two-child1-list{
+    margin-top:4px;
+}
+.footer-two .child3{
+    width: 186px;
+    height: 130px;
+    padding-left: 52px;
+}
+.footer-two .child4{
+    width: 186px;
+    height: 170px;
+    padding-left: 52px;
+}
+.footer-two .child5{
+    width: 186px;
+    height: 135px;
+    padding-left: 52px;
+}
+.footer-two .child5 img{
+    margin-top: 4px;
+
+}
+.footer .footer-three{
+    width: 1519.200px;
+    height: 200.200px;
+    border-top: 2px solid #FF0036;
+    background: #000;
+
+}
+.footer .xiaokeai>img{
+    margin-top: 165px;
+    width: 68px;
+    height: 25px;
+    position: relative;
+    margin-left: -1146px;
+
+    
+}
+.footer-three .footer-title{
+    width: 1190px;
+    height: 17.600px;
+    line-height: 24.800px;
+    /* background: #86f81c; */
+    margin: 0 164.600px;
+    padding :5px 0 5px 0;
+    /* font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif; */
+}
+.footer-three .footer-title a{
+        /* font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;  */
+        color:#fff;
+        margin-right: 3px;
+
+
+}
+.footer-three .footer-title-end{
+    width: 1190px;
+    height: 130.600px;
+    margin:0 164.600px;
+    background: green;
+}
+
+.footer-title-end .footer-title-end-text span  {
+    color: #a4a4a4;
+    /* margin-right: 65px; */
+
+
+}
+.footer-title-end .footer-title-end-text a{
+    color: #a4a4a4;
+    margin-right: 65px;
+}
+.footer-title-end .footer-title-end-text-weifa {
+    margin-right: 65px;
+}
+.footer-title-end-text .footer-title-end-text-tubiao img{
+    top:20px;
 }

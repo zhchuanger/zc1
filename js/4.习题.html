@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //3.	编写程序，计算10!(即 1*2*3＊•…10）的结果(10的阶乘)。
+        
+        // var sum = 1;
+        // for(var i = 1;i<=10;i++){
+        //     sum*=i;
+        //     }
+        // alert(sum);
+        //4.	编写程序，计算 1!+2!+3!+…..＋10！的结果
+        // var result =0;
+        // for(var i=1;i<=10;i++){
+        //     var sum =1;
+        //     for( var j=1;j<=i;j++){
+        //         sum*=j;
+
+        //     }
+        //     result+=sum;
+        // }
+        // //console.log(result);
+        // //document.write(result);
+        // alert(result);
+
+        //求阶乘
+        function fn(n){
+            var sum = 1;
+            for(var i=1;i<=n;i++){
+                sum*=i;
+            }
+            return sum;
+
+        }
+        //阶乘求和 1-10阶乘和
+        var result=0;
+        for(var j =1;j<=10;j++){
+            result += fn(j);
+        }
+        alert(result);
+        
+
+    
+    
+    
+    
+    </script>
+</body>
+</html>
