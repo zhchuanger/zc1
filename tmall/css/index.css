@@ -832,7 +832,7 @@
     width: 1190px;
     height: 130.600px;
     margin:0 164.600px;
-    background: green;
+    /* background: green; */
 }
 
 .footer-title-end .footer-title-end-text span  {
@@ -848,6 +848,23 @@
 .footer-title-end .footer-title-end-text-weifa {
     margin-right: 65px;
 }
-.footer-title-end-text .footer-title-end-text-tubiao img{
-    top:20px;
+.footer-title-end-text .gonganju{
+    vertical-align: -3px;
+}
+.gonganju-text{
+    margin-top: 5px;
+}
+.footer-title-end .footer-title-end-text .textending{
+    display: block;
+    color:#686868;
+    font-weight: 400;
+    height: 20px;
+    line-height: 20px;
+}
+.footer-title-end .end-image{
+    padding: 10px 0 5px 0;
+    
+}
+.end-image img{
+    margin-right: 10px;
 }

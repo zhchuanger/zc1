@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    
+    
+    </style>
+</head>
+<body>
+    <!-- DOM(Document Object Model)——文档对象模型 -->
+    <div id="div1" style="color:red">kgkhkrg</div>
+    <p class="a">555</p>
+    <ul>
+        <li>111</li>
+        <li class="a b">222</li>
+        <li>333</li>
+        <li class="a">444</li>
+    </ul>
+    <script>
+        //获取元素方法
+        //1.document.getElementById() 通过id 获取元素 返回查找的dom对象
+        var oDiv = document.getElementById('div1');
+        oDiv.style.color ="yellow";
+        
+        
+        //2.document.getElementsbytagname() 通过标签 获取元素 返回查找的数组
+        // var aLi = document.getElementsByTagName('li');
+        // console .log(aLi);
+        // aLi[1].style.background = "green";
+        // for(var i =0;i<aLi.length;i++){
+        //     aLi[i].style.background = "blue";
+        // }
+
+        //3.document.getElementsbyclassname() 通过class名获取元素 返回数组
+        // var a1 = document.getElementsByClassName('a');
+        // for(var i=0;i<a1.length;i++){
+        //     a1[i].style.background = "purple";
+        // }
+
+
+        //方法返回所有class名为 a 的元素数组
+        function getElementsByClass(clsName){
+            // 取到页面中所有元素
+            var result=[];
+            var allEle = document.getElementsByTagName("*");
+            //循环每一个元素
+            for(var i=0;i<allEle.length;i++){
+                //class  是保留字 所以不能直接用class  用classNme
+                //"a b"=="a"
+                var arr= allEle[i].className.split(" ");//["a" ,"b"];
+                for(var k=0;k<arr.length;k++){
+                    if(arr[k]==clsName){
+                        result.push(allEle[i]);
+                    }
+                }
+            }
+            return result;
+        }
+        
+            
+
+
+
+
+
+        var a2 = getElementsByClass('a');
+        for(var j=0;j<a2.length;j++){
+            a2[j].style.background = "pink";
+        }
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

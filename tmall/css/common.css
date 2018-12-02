@@ -43,6 +43,7 @@ body{
     height: 40px;
     box-shadow: 0 2px 4px 0px rgba(0,0,0,0.30);
     margin-bottom: 5px;
+    font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
 }
 .wrapper{
     width: 1230px;
@@ -126,6 +127,32 @@ body{
     line-height: 30px;
     display: none;
 
+}
+.sub-list1{
+    width: 140px;
+    height: 161px;
+    z-index: 1;
+    margin-left: -88px;
+
+}
+.sub-list1 {
+    width: 140px;
+    height: 161px
+
+}
+.sub-list1>div{
+    width: 57px;
+    height: 21px;
+    padding-left: 13px;
+    
+
+}
+.shangjia-title{
+    height: 11px;
+    line-height: 11px;
+}
+.shangjia-list{
+    float: left;
 }
 .sub-list a{
     color: #999;

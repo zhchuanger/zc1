@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            /* 解决塌陷问题 */
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+            width: 80px;
+            height: 30px;
+            background: #ff0036;
+            margin-right: 3px;
+            cursor: pointer;
+        }
+
+        li.selected {
+            background: #14eb66;
+        }
+
+        #content div {
+            width: 246px;
+            height: 180px;
+            background: #cccccc;
+            display: none;
+        }
+
+        #content div.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <ul id="btn-box">
+            <li class="selected">111</li>
+            <li>222</li>
+            <li>333</li>
+        </ul>
+        <div id="content">
+            <div class="active">content111</div>
+            <div>content222</div>
+            <div>content333</div>
+        </div>
+
+
+    </div>
+    <script>
+        var aLi = document.getElementsByTagName('li');
+        var oContent = document.getElementById('content');
+        var aDiv = oContent.getElementsByTagName("div");
+        for (var i = 0; i < aLi.length; i++) { //页面加载时候就会执行 给三个li绑定事件 i++变成3
+            aLi[i].idx = i;//ali[0].idx=0 ali[1].idx=1  ali[2].idx=2 
+            aLi[i].onclick = function () {
+                for (var j = 0; j < aLi.length; j++) {//清除所有li的classname
+                    aLi[j].className = "";
+                    aDiv[j].className = "";
+                }
+                this.className = "selected";//给自己添加class = selected；
+                aDiv[this.idx].className = "active";
+
+
+            }
+        }
+
+
+    //onmouseover 鼠标划入事件
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
