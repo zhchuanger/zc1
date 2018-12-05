@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">
+        fjcsakjfo
+    </div>
+    <ul>
+        <li>111</li>
+        <li class="a">222</li>
+        <li>222</li>
+        <li class="a">222</li>
+    </ul>
+    <script>
+        //获取元素方法
+        //document.getElementByid 通过id 获取元素 返回查找dom对象
+        var oDiv = document.getElementById('div1');
+        oDiv.style.color = "yellow";
+
+        // var aLi = document.getElementsByTagName("li");
+        // for(var i = 0;i<aLi.length;i++){
+        //     aLi[i].style.background = "green";
+        // }
+        // var a1 =  document.getElementsByClassName('a');
+        // for(var i=0; i<a1.length; i++){
+        //     a1[i].style.background ="purple";
+        // }
+
+        //方法返回所有class名为 a 的元素数组
+        function getElementsByClass(clsName) {
+            //取到页面中所有元素
+            var result = [];
+            var allEle = document.getElementsByTagName('*');
+            //循环每一个元素
+            for (var i = 0; i < allEle.length; i++) {
+                if (allEle[i].className == clsName) {
+                    result.push(allEle[i]);
+
+                }
+            }
+            return result;
+        }
+
+        var a2 = getElementsByClass('a');
+        for(var j=0; j<a2.length;j++){
+            a2[j].style.background ="pink";
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>
