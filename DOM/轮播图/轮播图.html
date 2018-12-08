@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            cursor: pointer;
+        }
+
+        #container {
+            width: 750px;
+            height: 291px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        #img-Box img {
+            display: none;
+        }
+
+        #img-Box .active {
+            display: block;
+        }
+
+        #button-Box li,#arrow-box li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            margin-right: 5px;
+            border-radius: 5px;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+
+        }
+
+        #button-Box {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+
+        }
+
+        #button-Box .selected {
+            background: #ff0036;
+        }
+        #arrow-box{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="img-Box">
+            <img src="img/1.jpg" class="active" alt="">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+            <img src="img/4.jpg" alt="">
+            <img src="img/5.jpg" alt="">
+        </div>
+        <ul id="button-Box">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+
+        </ul>
+        <ul id="arrow-box"> 
+            <li id="next">&lt;</li>
+            <li id="next">&gt;</li>
+        </ul>
+
+    </div>
+    <script>
+        var obtnbox = document.getElementById("button-Box")
+        var abtn = obtnbox.getElementsByTagName("li");
+        var aimg = document.getElementsByTagName("img");
+        var onext = document.getElementById("next");
+        //记录当前索引
+        var inow = 0;
+        for(var i=0;i<abtn.length;i++){
+            abtn[i].index=i;
+            abtn[i].onclick = function(){
+                // for(var j=0;j<abtn.length;j++){
+                //     abtn[j].className = "";
+                //     aimg[j].className = "";
+                // }
+                // // this.className = "selected";
+                // abtn[this.index].className ="selected";
+                // aimg[this.index].className = "active";
+                change(this.index)
+            }
+        }
+
+
+        onext.onclick = function(){
+            inow++;
+            // for(var k=0;k<abtn.length;k++){
+            //     abtn[k].className = "";
+            //     aimg[k].className = "";
+            // }
+            // abtn [inow].className = "selected";
+            // aimg[inow].className = "active";
+            change(inow);
+        }
+        //传索引是几 显示的就是几
+        function change(idx){
+            for(var j=0;j<abtn.length;j++){
+                    abtn[j].className = "";
+                    aimg[j].className = "";
+                }
+                abtn[idx].className ="selected";
+                aimg[idx].className = "active";
+
+        }
+
+
+    
+    
+    
+    
+    
+    
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

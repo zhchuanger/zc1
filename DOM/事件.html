@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            background: red;
+            width: 200px;
+            height: 200px;
+        }
+    
+    
+    </style>
+</head>
+<body>
+
+    <!-- 事件 三要素 事件源 事件处理函数 事件 -->
+    <div id="div1">
+        hahahhah
+    </div>
+    <script>
+        var oDiv=document.getElementById('div1');
+        oDiv.onclick = function(e){
+            // alert('哈哈');
+            // 事件源 点击谁触发的事件 事件源是谁
+            console.log(e.target);
+            // 鼠标举例屏幕左边的距离
+            console.log(e.clientX);
+            // 鼠标距离上边
+            console.log(e.clientY);
+        }
+
+    
+    
+    
+    </script>
+
+
+
+
+
+
+    
+</body>
+</html>

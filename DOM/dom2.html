@@ -14,7 +14,7 @@
     </div>
     <ul>
         <li>111</li>
-        <li class="a">222</li>
+        <li class="a b">222</li>
         <li>222</li>
         <li class="a">222</li>
     </ul>
@@ -33,25 +33,57 @@
         //     a1[i].style.background ="purple";
         // }
 
-        //方法返回所有class名为 a 的元素数组
-        function getElementsByClass(clsName) {
-            //取到页面中所有元素
-            var result = [];
-            var allEle = document.getElementsByTagName('*');
-            //循环每一个元素
-            for (var i = 0; i < allEle.length; i++) {
-                if (allEle[i].className == clsName) {
-                    result.push(allEle[i]);
+        // 方法返回所有class名为 a 的元素数组
+        // function getElementsByClass(clsName) {
+        //     var result = [];
+        //     var allEle = document.getElementsByTagName('*');
+        //     for (var i = 0; i < allEle.length; i++) {
+        //         var arr = allEle[i].className.split(" ");
+        //         for (var k = 0; k < arr.length; k++) {
+        //             if (arr[k] == clsName) {
+        //                 result.push(allEle[i]);
+        //             }
+        //         }
+        //     }
+        //     return result;
+        // }
+        // function getElementsByClass(clsName){
+        //     var result = [];
+        //     var allEle = document.getElementsByTagName("*");
+        //     for(var i=0;i<allEle.length;i++){
+        //         var arr = allEle[i].className.split(" ");
+        //         for(k=0;k<arr.length;k++){
+        //             if(arr[k] == clsName){
+        //                 result.push(allEle[i]);
+        //             }
+        //         }
+        //     }
+        //     return result;
+        // }
+        
+        // var a2 = getElementsByClass('a');
+        // for (var j = 0; j < a2.length; j++) {
+        //     a2[j].style.background = "pink";
+        // }
 
+        function getElementsByClass(clsName){
+            var result = [];
+            var allEle = document.getElementsByTagName("*");
+            for(var i=0;i<allEle.length;i++){
+                var arr = allEle[i].className.split(" ");
+                for(var k=0;k<arr.length;k++){
+                    if(arr[k]==clsName){
+                        result.push(allEle[i]);
+                    }
                 }
             }
             return result;
         }
-
-        var a2 = getElementsByClass('a');
-        for(var j=0; j<a2.length;j++){
-            a2[j].style.background ="pink";
+        var a2=getElementsByClass("a");
+        for(j=0;j<a2.length;j++){
+            a2[j].style.background = "green";
         }
+
 
 
 
