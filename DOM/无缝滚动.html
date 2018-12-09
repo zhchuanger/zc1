@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        #content {
+            width: 400px;
+            height: 200px;
+            border: 1px solid rgb(136, 133, 133);
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+
+        }
+
+        #num-box {
+            list-style: none;
+            width: 520px;
+            position: absolute;
+
+
+        }
+
+        li {
+            width: 120px;
+            height: 120px;
+            background: pink;
+            margin-right: 10px;
+            float: left;
+            color: #fff;
+            font-size: 50px;
+            line-height: 120px;
+            text-align: center;
+
+        }
+
+        #btn-box span {
+            width: 100px;
+            height: 50px;
+            background: palevioletred;
+            display: inline-block;
+            color: #fff;
+            font-size: 20px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        #btn-box {
+            margin: 136px 94px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="content">
+        <ul id="num-box">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div id="btn-box">
+            <span id="left">向左</span>
+            <span id="right">向右</span>
+        </div>
+
+    </div>
+
+    <script>
+        var onumbox = document.getElementById('num-box');
+        var oright = document.getElementById('right');
+        var oleft = document.getElementById('left');
+
+        // console.log(onumbox.innerHTML);
+        // 内容复制
+        onumbox.innerHTML = onumbox.innerHTML + onumbox.innerHTML;
+        // 宽度*2
+        onumbox.style.width = onumbox.offsetWidth * 2 + "px";
+        var speed = -3;
+        setInterval(function () {
+            onumbox.style.left = onumbox.offsetLeft + speed + "px";
+            //left值 小于等于宽度的一半的时候 宽度  设置成0
+            if (onumbox.offsetLeft <= -onumbox.offsetWidth / 2) {
+                onumbox.style.left = 0;
+            }
+            if(onumbox.offsetLeft > 0){
+                onumbox.style.left =  -onumbox.offsetWidth/2 +"px";
+            }
+        }, 20)
+
+
+        oright.onclick = function (){
+            speed =3;
+
+        }
+        oleft.onclick = function (){
+            speed =-3;
+
+        }
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -23,20 +23,18 @@
             margin: 100px auto;
             position: relative;
             overflow: hidden;
-        
+
         }
-        #img-box{
-            width:3750px;
+
+        #img-Box {
+            width: 3750px;
             transition: left 2s linear;
             position: absolute;
             left: 0;
         }
-        #img-Box img {
-            display: none;
-        }
 
-        #img-Box .active {
-            display: block;
+        #img-Box img {
+            float: left;
         }
 
         #button-Box li,#arrow-box li {
@@ -72,27 +70,27 @@
 </head>
 
 <body>
-        <div id="container">
-            <div id="img-Box">
-                <img src="img/1.jpg" class="active" alt="">
-                <img src="img/2.jpg" alt="">
-                <img src="img/3.jpg" alt="">
-                <img src="img/4.jpg" alt="">
-                <img src="img/5.jpg" alt="">
-            </div>
+    <div id="container">
+        <div id="img-Box">
+            <img src="img/1.jpg" class="active" alt="">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+            <img src="img/4.jpg" alt="">
+            <img src="img/5.jpg" alt="">
+        </div>
         <ul id="button-Box">
-                <li class="selected">1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
 
         </ul>
         <ul id="arrow-box">
-                <li id="prev">&lt;</li>
-                <li id="next">&gt;</li>
+            <li id="prev">&lt;</li>
+            <li id="next">&gt;</li>
         </ul>
-    
+
     </div>
     <script>
         var ocontainer = document.getElementById("container");
@@ -101,64 +99,45 @@
         var aimg = document.getElementsByTagName("img");
         var onext = document.getElementById("next");
         var oprev = document.getElementById("prev");
-        //记录当前索引
+        var oImgBox = document.getElementById('img-Box');
         var inow = 0;
-        var timer = 0;
+
+        // 点击的按钮的索引是   0    1        2        3       index
+        //    imgbox   left  0    -1*750   -2*750  -3*750    -index*750
+
         for (var i = 0; i < abtn.length; i++) {
             abtn[i].index = i;
             abtn[i].onclick = function () {
-                // for(var j=0;j<abtn.length;j++){
-                //     abtn[j].className = "";
-                //     aimg[j].className = "";
-                // }
-                // // this.className = "selected";
-                // abtn[this.index].className ="selected";
-                // aimg[this.index].className = "active";
                 change(this.index);
                 inow = this.index;
+
             }
         }
-
-        //点击下一个按钮
         onext.onclick = function () {
             inow++;
-            if (inow == abtn.length) {
-                inow = 0;
+            if(inow==abtn.length){
+                inow=0;
             }
-            // for(var k=0;k<abtn.length;k++){
-            //     abtn[k].className = "";
-            //     aimg[k].className = "";
-            // }
-            // abtn [inow].className = "selected";
-            // aimg[inow].className = "active";
             change(inow);
         }
-        // 点击上一个按钮
         oprev.onclick = function () {
             inow--;
-            if (inow == -1) {
-                inow = abtn.length - 1;
+            if(inow==-1){
+                inow=abtn.length-1;
             }
-            // for(var k=0;k<abtn.length;k++){
-            //     abtn[k].className = "";
-            //     aimg[k].className = "";
-            // }
-            // abtn [inow].className = "selected";
-            // aimg[inow].className = "active";
             change(inow);
         }
-        //传索引是几 显示的就是几
-        function change(idx) {
+        function change(idx){
             for (var j = 0; j < abtn.length; j++) {
                 abtn[j].className = "";
-                aimg[j].className = "";
             }
             abtn[idx].className = "selected";
-            aimg[idx].className = "active";
+
+            oImgBox.style.left = -idx * 750 + "px";
+
+        
 
         }
-
-
         run();
         //划入时清掉定时器
         ocontainer.onmouseover = function () {
@@ -167,19 +146,13 @@
         //划出清掉计时器
         ocontainer.onmouseout = function () {
             run();
-
         }
         function run() {
             timer = setInterval(function () {
                 onext.onclick();
-
             }, 1000);
 
-        }
-
-
-
-
+        }  
 
 
 

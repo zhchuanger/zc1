@@ -272,12 +272,22 @@
     width: 1230px;
     display: block;
     height: 500px;
+    opacity: 1;
+    transition: opacity 2s linear;
 }
 
+
 .slide-box{
+    width: 1230px;
     position: relative;
     height: 500px;
     left:0px;
+}
+.slide-img-box{
+    width: 7380px;
+}
+.slide-img-box .selected{
+    opacity: 0;
 }
 
 .slide-box a{

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0;
+            padding:0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    
+    
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div id="div1" style="width">
+
+    </div>
+
+    <script>
+        var oDiv = document.getElementById('div1');
+        // console.log(oDiv.style.width) 只能取到内联样式的属性 可以设置css属性
+        // oDiv.offsetWidth  只能获取属性 padding+border+element的宽度 不可以设置css属性
+        console.log(oDiv.offsetWidth);
+        //相对于最近已定位的祖先元素 如果没有 相对于body
+        console.log(oDiv.offsetLeft);
+        console.log(oDiv.offsetTop);
+        //相对于最近已定位的祖先元素
+        console.log(oDiv.offsetParent)
+
+
+        
+        
+        
+        
+    </script>
+
+
+
+
+
+    
+</body>
+</html>
