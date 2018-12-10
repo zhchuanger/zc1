@@ -1,46 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        ul{
+
+        ul {
             list-style: none;
             /* 解决塌陷问题 */
             overflow: hidden;
         }
-        li{
+
+        li {
             float: left;
             width: 100px;
             height: 30px;
-            background: #ff0036;
             margin-right: 8px;
+            background: rgb(240, 240, 100);
             cursor: pointer;
         }
 
+        li.selected {
+            background: rgb(53, 255, 53);
+        }
 
-    
-    
-    
+        #content div {
+            width: 317px;
+            height: 180px;
+            background: rgb(76, 166, 250);
+            display: none;
+
+        }
+
+        #content div.active {
+            display: block
+        }
     </style>
 </head>
+
 <body>
-    <ul id="container">
+    <div id="container">
         <ul id="btn-box">
-            <li>111</li>
+            <li class="selected">111</li>
             <li>222</li>
             <li>333</li>
-
-
         </ul>
         <div id="content">
-            <div>content111</div>
+            <div class="active">content111</div>
             <div>content222</div>
             <div>content333</div>
 
@@ -48,8 +61,34 @@
 
     </div>
     <script>
-    
-    
+        // 点击元素加上selected class名
+        // i=3;  所以 ali[i] 会返回undefined
+        //对当前对象的引用  点击的是谁 this就是谁
+
+        var ali = document.getElementsByTagName("li");
+        var ocontent = document.getElementById("content");
+        var adiv = ocontent.getElementsByTagName("div");
+
+
+        for (var i = 0; i < ali.length; i++) {//页面加载时候就会执行，给三个Li都绑定点击事件 i++
+            ali[i].idx = i;//ali[0].idx = 0 
+            ali[i].onmouseover = function () {
+                for (var j = 0; j < ali.length; j++) {
+                    ali[j].className = "";
+                    adiv[j].className = "";
+                }
+                this.className = "selected";
+                adiv[this.idx].className = "active";
+                
+
+
+
+
+            }
+        }
+
+
+
     </script>
 
 
@@ -57,6 +96,7 @@
 
 
 
-    
+
 </body>
+
 </html>

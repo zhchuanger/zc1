@@ -878,3 +878,11 @@
 .end-image img{
     margin-right: 10px;
 }
+.fix-angle{
+    background:#000;
+    width: 35px;
+    height: 100%;
+    position: fixed;
+    right: 0;
+
+}
