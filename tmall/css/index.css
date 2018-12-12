@@ -593,6 +593,43 @@
     box-shadow: 0 2px 8px 0 rgba(0,0,0,.09);  
 
 }
+.tianmaospmk-content-right-dong-2 #btn-box li{
+    float: left;
+    width: 231px;
+    height: 57px;
+    background: #f5f5f5;
+    font-size: 18px;
+    text-align: center;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    cursor: pointer;
+
+}
+#btn-box li span{
+    display: block;
+    margin-top: 16px;
+}
+#btn-box li.selected{
+    background: #00B262;
+}
+#content .active ,.actt{
+    width: 200px;
+    height: 200px;
+    margin-left: 263px;
+    margin-top: 10px;
+
+    
+
+}
+#content img{
+    display: none;
+}
+#content .active{
+    display: block;
+}
+
+
+    
+
 .tianmaospmk-content-right{
     float: left;
     /* margin-left: 234px; */

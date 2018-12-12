@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            cursor: pointer;
+        }
+
+        #container {
+            width: 750px;
+            height: 291px;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        #img-Box {
+            width: 3750px;
+            transition: left 2s linear;
+            position: absolute;
+            left: 0;
+        }
+
+        #img-Box img {
+            float: left;
+        }
+
+        #button-Box li,#arrow-box li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            margin-right: 5px;
+            border-radius: 5px;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+
+        }
+
+        #button-Box {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+
+        }
+
+        #button-Box .selected {
+            background: #ff0036;
+        }
+
+        #arrow-box {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="img-Box">
+            <img src="img/1.jpg" class="active" alt="">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+            <img src="img/4.jpg" alt="">
+            <img src="img/5.jpg" alt="">
+        </div>
+        <ul id="button-Box">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+
+        </ul>
+        <ul id="arrow-box">
+            <li id="prev">&lt;</li>
+            <li id="next">&gt;</li>
+        </ul>
+
+    </div>
+    <script>
+        var ocontainer = document.getElementById("container");
+        var obtnbox = document.getElementById("button-Box")
+        var abtn = obtnbox.getElementsByTagName("li");
+        var aimg = document.getElementsByTagName("img");
+        var onext = document.getElementById("next");
+        var oprev = document.getElementById("prev");
+        var oImgBox = document.getElementById('img-Box');
+        var inow = 0;
+
+        // 点击的按钮的索引是   0    1        2        3       index
+        //    imgbox   left  0    -1*750   -2*750  -3*750    -index*750
+
+        for (var i = 0; i < abtn.length; i++) {
+            abtn[i].index = i;
+            abtn[i].onclick = function () {
+                change(this.index);
+                inow = this.index;
+
+            }
+        }
+        onext.onclick = function () {
+            inow++;
+            if(inow==abtn.length){
+                inow=0;
+            }
+            change(inow);
+        }
+        oprev.onclick = function () {
+            inow--;
+            if(inow==-1){
+                inow=abtn.length-1;
+            }
+            change(inow);
+        }
+        function change(idx){
+            for (var j = 0; j < abtn.length; j++) {
+                abtn[j].className = "";
+            }
+            abtn[idx].className = "selected";
+
+            oImgBox.style.left = -idx * 750 + "px";
+
+        
+
+        }
+        run();
+        //划入时清掉定时器
+        ocontainer.onmouseover = function () {
+            clearInterval(timer);
+        }
+        //划出清掉计时器
+        ocontainer.onmouseout = function () {
+            run();
+        }
+        function run() {
+            timer = setInterval(function () {
+                onext.onclick();
+            }, 1000);
+
+        }  
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>
