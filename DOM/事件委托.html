@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul{
+            background: green;
+        }
+        li{
+            background:indianred;
+            cursor: pointer;
+
+        }
+    
+    
+    
+    </style>
+</head>
+
+<body>
+    <button id="btn">add</button>
+
+    <ul id="ul1">
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+    </ul>
+    <!-- 
+        后生成元素  事件绑定
+
+        事件委托 事件绑定在父元素身上 点击子元素时通过事件冒泡会触发父元素事件
+                ，判断事件源  解决了后生成元素事件绑定问题
+    -->
+    <script>
+        var obtn = document.getElementById("btn");
+        var oul = document.getElementById("ul1");
+        var ali = document.querySelectorAll("li");
+        // for(i=0;i<ali.length;i++){
+        //     ali[i].onclick = function(){
+        //         console.log(this.innerHTML);
+        //     }
+        // }
+
+        obtn.onclick = function () {
+            var oli = document.createElement("li");
+            oli.innerHTML = Math.random();
+            oul.appendChild(oli);
+        }
+        oul.onclick = function(e){
+            e = e||window.event;
+            // console.log(e.target);
+            var target = e.target;
+            if(target.tagName == "LI"){
+                console.log(e.target.innerHTML);
+
+            }
+        }
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

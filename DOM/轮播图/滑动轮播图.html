@@ -96,6 +96,7 @@
         <script>
 
             var oNext = document.getElementById('next');
+            var oPrev = document.getElementById('prev');
             var oImgBox = document.getElementById('img-box');
             var oBtnBox = document.getElementById('btn-box');
             var aImg = document.getElementsByTagName('img');
@@ -107,7 +108,17 @@
                 // 瞬间拽到第0张图片  索引改为1
                 if (iNow == aImg.length) {
                     oImgBox.style.left = 0;
+                    //显示第二张图 即所有索引为1的图片
                     iNow = 1;
+                }
+                change(iNow);
+            }
+            oPrev.onclick = function(){
+                iNow--;
+                //临界点 -1拽到倒数第一个  然后显示倒数第二个
+                if(iNow ==-1){
+                    oImgBox.style.left = -aImg[0].offsetWidth * (aImg.length-1) + "px";
+                    iNow = aImg.length-2;
                 }
                 change(iNow);
             }
@@ -120,6 +131,7 @@
                 for (var i = 0; i < aLi.length; i++) {
                     aLi[i].className = "";
                 }
+                //当index的索引是5的时候 让第一个按钮显示selected的样式
                 aLi[index == 5 ? 0 : index].className = "selected";
                 // 这个方法不用写px
                 animate(oImgBox, {

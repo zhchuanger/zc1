@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1" class="aa">
+        nsdkjvgje
+    </div>
+    <input type="checkbox" name="ball">足球
+    <input type="checkbox" name="ball">篮球
+    <input type="checkbox" name="ball">橄榄球
+    <input type="checkbox" name="ball">棒球
+    <button id="all">全选</button>
+    <button id="unall">全不选</button>
+    <button id="btn">反选</button>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // console.log($("#div1").attr("class"));
+        //普通属性
+        // $("#div1").attr("class","bb");
+        //特有属性
+        // $("#div1").prop("class","bb");
+        // $("#all").on("click",function(){
+        //     $(":checkbox").prop("checked",true);
+        // })
+        // $("#unall").on("click",function(){
+        //     $(":checkbox").prop("checked",false);
+        // })
+        // $("#btn").on("click",function(){
+        //     $(":checkbox").each(function(index,elem){
+        //         /*
+        //         index 索引
+        //         elem  原生element
+        //         */
+        //         elem.checked = !elem.checked;
+
+        //     })
+
+        // })
+
+        // $("#div1").removeAttr("class");
+        $("#all").on("click",function(){
+            $(":checkbox").prop("checked",true)
+        })
+        $("#unall").on("click",function(){
+            $(":checkbox").prop("checked",false);
+        })
+        $("#btn").on("click",function(){
+            $(":checkbox").each(function(index,elem){
+                elem.checked = !elem.checked;
+            })
+        })
+        $("#div1").removeAttr("class");
+        
+
+        
+        
+        
+        
+    </script>
+    
+</body>
+</html>

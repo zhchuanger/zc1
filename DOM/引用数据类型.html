@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // var a = 5;
+        // var b = a;
+
+        // b = 10;
+
+        // console.log(a)
+
+
+        // var arr = [1,2,3];
+        // var arr2 = arr;
+        // arr2[0] = 5;
+        // console.log(arr);  //[1,2,3]
+
+
+        var person1 = {
+            name:"zs",
+            age:10,
+            father:{
+                name:"zxx",
+                age :40
+            }
+        }
+        // var person2 = person1;
+        // var person2 = {};
+        // person2.name = person1.name;
+        // person2.age = person1.age;
+
+        // 循环对象 
+        // for(key in person1){
+        //     console.log(key);
+        //     // console.log(person1.key);
+        //     // 可变的 动态的 属性
+        //     // console.log(person1[key]);
+        //     person2[key] = person1[key];
+        // }
+
+        // console.log(person2);
+        //拷浅贝  深克隆
+        function clone(obj){
+            var result = {}
+            for(var key in obj){
+                if(typeof obj[key]=="object" ){//如果是对象
+                    result[key] = clone(obj[key]);//深克隆
+
+                }else{
+                    result[key] = obj[key];
+                }
+                
+            }
+            return  result;
+        }
+
+        var person3 = clone(person1);
+        person1.father.name = "zyy";
+        // person1.name = "lisi";
+        console.log(person3);
+
+        
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    </script>
+    
+</body>
+</html>

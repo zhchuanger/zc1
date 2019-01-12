@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+    
+    
+    
+    
+    
+    
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        aaaaa
+        <p>ppppppp</p>
+    </div>
+    <button id="btn">remove</button>
+    <script>
+        /*
+        1.创建节点 createelement()
+        2.appendchild() 插入到内部最后边
+        3.removechild() 删除
+        4.replacechild（newnode,oldnode）
+        5.insertbefore(newnode,在谁的前边插入)
+        6.clonenode()
+
+
+
+     */
+        var obtn = document.getElementById("btn");
+
+        var oh1 = document.createElement("h1");
+        oh1.innerHTML = "hahahhahah";
+        var oDiv1 = document.getElementById("div1");
+        var op = document.getElementsByTagName("p")[0];
+
+        var ospan = document.createElement("span");
+        ospan.innerHTML = "嘤嘤嘤";
+        oDiv1.appendChild(oh1);
+        obtn.onclick = function () {
+            // oDiv1.removeChild(op);
+            // oDiv1.replaceChild(ospan,op);
+            oDiv1.insertBefore(ospan,op);
+        }
+
+    </script>
+
+</body>
+
+</html>
