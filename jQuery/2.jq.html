@@ -1,41 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <div id="div1">11111111</div>
-
-
     <script src="jquery-1.12.4.js"></script>
     <script>
+        console.log($("#div1"));
+        console.log(document.getElementById("div1"));
         $div = $("#div1");
-        // $div.css("background","red");
+        // $("#div1").css("background","#ff0036");
+        // $div.style.background = "orange";
+
+        var odiv = document.getElementById("div1");
+        // odiv.style.background = "green";
 
 
-        var odiv1 = document.getElementById("div1");
-        // odiv1.style.background = "green";
-        /*把jq对象转化为原生对象
-            $div.get(0)
-            $div[0]
-        原生对像转换成jq
-            $(element)
+        /*
+            把jq对象转成原生对象
+            - $div.get(0)
+            - $div[0]
+            原生对象转成jq对象
+            - $(odiv)
         */
-        
         // console.log($div.get(0));
-        $div[0].innerHTML = "22288";
-        console.log($div[0]);
-        
-        $(odiv1).html("234354");
-        console.log($(odiv1));
-    
-    
-    
-    
+        // $div.get(0).innerHTML = "222";
+
+        console.log($(odiv));
+        $(odiv).html("sfcnkds");
+
+
+
+
     </script>
-    
+
 </body>
+
 </html>
