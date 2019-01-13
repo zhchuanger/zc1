@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 400px;
+            height: 400px;
+            background: #ff0000;
+        }
+
+        #div2 {
+            width: 200px;
+            height: 200px;
+            background: #0000ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        111
+        <div id="div2">
+            222
+        </div>
+    </div>
+
+    <select id="school">
+        <option value="aa">黑大</option>
+        <option value="bb">理工</option>
+        <option value="cc">林大</option>
+    </select>
+
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // $('#div1').on('mouseenter',function(){
+        //     console.log('div11 enter');
+        // })
+        // $('#div2').on('mouseenter',function(){
+        //     console.log('div22 enter');
+        // })
+
+        // mouseover mouseout支持事件冒泡 
+        // mouseenter mouseleave 不支持事件冒泡
+        $('#div1').on('mouseover', function (e) {
+            console.log(e.type);
+
+            // console.log('div11 enter',e.target,e.currentTarget);
+        })
+        $('#div2').on('mouseover', function (e) {
+            // console.log('div22 enter',e.target,e.currentTarget);
+        })
+
+        // $('#school').on('change',function(){
+        //     console.log( $(this).val());
+        // })
+        $(document).on('keyup', function (e) {
+            console.log(e.which);//针对键盘和鼠标事件，这个属性能确定你到底按的是哪个键
+
+
+        })
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

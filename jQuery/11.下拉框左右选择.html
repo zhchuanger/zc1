@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #left,#right{
+            width: 254px;
+            height: 200px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <select id="left" multiple="multiple">
+        <option value="">选项二</option>
+        <option value="">选项三</option>
+        <option value="">选项四</option>
+        <option value="">选项五</option>
+        <option value="">选项六</option>
+    </select>
+    <div>
+        <button id="btn-left1">选中添加到右边>></button>
+        <button id="btn-left2">全部添加到右边>></button>
+    </div>
+    <select id="right" multiple="multiple">
+        <option value="">选项一</option>
+    </select>
+    <div>
+        <button id="btn-right1"><<选中删除到左边</button>
+        <button id="btn-right2"><<全部删除到左边</button>
+    </div>
+    
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $("#btn-left1").on("click",function(){
+            $("#left option:selected").appendTo("#right");
+            $("#right option").prop("selected",false);
+
+        })
+        $("#btn-left2").on("click",function(){
+            $("#left option").appendTo("#right");
+
+        })
+        $("#left").on("dblclick",function(){
+            $("#left option:selected").appendTo("#right");
+            $("#right option").prop("selected",false);
+        })
+
+
+            
+        $("#btn-right1").on("click",function(){
+            $("#right option:selected").appendTo("#left");
+            $("#left option").prop("selected",false);                                                                                                                                   
+        })
+        $("#btn-right2").on("click",function(){
+            $("#right option").appendTo("#left");
+
+        })
+        $("#right").on("dblclick",function(){
+            $("#right option:selected").appendTo("#left");
+            $("left option").prop("selected",false);
+        })
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active{
+            background: red;
+            color:black;
+        }
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div id="div1" class="active">哈哈哈哈</div>
+    <button id="btn">qieqie</button>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // $("#div1").css("background","blue").css("color","yellow");
+        // $("#div1").css({
+        //     background:"yellow",
+        //     height:300,
+        //     color:'#000'
+
+        // })
+        $("#btn").on("click",function(){
+            //切换到active class
+            $("#div1").toggleClass("active");
+        })
+
+    
+    
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>

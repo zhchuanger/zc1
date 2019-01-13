@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .tab_menu{
+            overflow: hidden;
+        }
+        .tab_menu li{
+            float: left;
+            width: 80px;
+            height: 30px;
+            background: #ccc;
+            border: 1px solid #000;
+            margin-right:3px;
+            cursor: pointer;
+        }
+        .tab_menu .selected{
+            background: greenyellow;
+        }
+        .tab_box{
+            width: 280px;
+            height: 180px;
+            border:1px solid #000;
+        }
+        .tab_box div{
+            display: none;
+        }
+        .tab_box .active{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="tab">
+        <div class="tab_menu">
+            <ul>
+                <li class="selected">时事</li>
+                <li>体育</li>
+                <li>娱乐</li>
+            </ul>
+        </div>
+        <div class="tab_box">
+            <div class="active">时事</div>
+            <div>体育</div>
+            <div>娱乐</div>
+        </div>
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(".tab_menu li").on("click",function(){
+            //按钮添加样式
+            $(this).addClass("selected").siblings().removeClass("selected");
+            // console.log( $(this).index() );
+            //index() 返回索引
+            $(".tab_box div").eq( $(this).index() ).addClass("active").siblings().removeClass("active");
+        })
+    </script>
+
+</body>
+
+</html>

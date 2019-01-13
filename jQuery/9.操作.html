@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
 </head>
+
 <body>
-    <script src=""></script>
     
+    <div id="div1">sdfghjk</div>
+    <div id="div2">
+        haha
+    </div>
+    <div class="container">
+        <div class="inner">Hello</div>
+        <div class="inner">Goodbye</div>
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        var $div = $('#div1').clone();
+        // 链式操作
+        $('#div2').prepend($div).css("background", "red");
+        // $('#div2').append("<p>sdfghjk</p>");
+        // $div.appendTo( "#div1" ).css("background","#ff0036");
+        // var oDiv = document.getElementById('div1');
+        // $Div = $('#div1');
+        // $('.inner').wrap($Div);
+
+
+        // console.log($("#div1").html());
+        // $("#div1").text("<p>哈哈</p>");
+        $("#div1").after("<h1>hahahahhahah</h1>");
+        $("#div1").before("<h2>hahahahhahah</h2>");
+
+
+    </script>
+
+
 </body>
+
 </html>
