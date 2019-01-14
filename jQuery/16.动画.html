@@ -1,54 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        #div1{
+        #div1 {
             width: 200px;
             height: 200px;
-            background: red;
+            background: #ff0000;
         }
-    
-    
     </style>
 </head>
+
 <body>
     <button id="hide">hide</button>
     <button id="show">show</button>
     <button id="toggle">toggle</button>
     <button id="animate">animate</button>
-
+    <button id="stop">stop</button>
     <div id="div1">
-
     </div>
     <script src="jquery-1.12.4.js"></script>
     <script>
-    
-        $("#hide").on("click",function(){
-            $("#div1").slideDown(1000);
+
+        $('#hide').on('click', function () {
+            $('#div1').slideDown(1000);
         })
-        $("#show").on("click",function(){
-            $("#div1").slideUp(1000);
+        $('#show').on('click', function () {
+            $('#div1').slideUp(1000);
         })
-        $("#toggle").on("click",function(){
-            $("#div1").toggle(1000);
+        $('#toggle').on('click', function () {
+            $('#div1').toggle(1000);
         })
-        $("#animate").on("click",function(){
-            $("#div1").animate({
-                width:800,
-                height:100,
-                opacity:0.5
-            },2000,function(){
-                console.log("haha");
-            });
-        })
-    
-    
-    
+
+        $('#animate').on('click', function () {
+            // $('#div1').animate({
+            //     width:800,
+            //     height:100,
+            //     opacity:0.5
+            // },2000,function(){
+            //     console.log('haha');
+            // });
+            $('#div1').animate({
+                height: 100,
+            }, 1000).animate({
+                opacity: 0.2
+            }, 1000)
+
+
+            // console.log('haha');
+        });
+
+        $('#stop').on('click', function () {
+            /* 
+            -clearqueue 清楚队列 默认false
+            - jumpToEnd 当前动画跳转到最后 false
+            */
+            $('#div1').stop(true, true);
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
-    
+
 </body>
+
 </html>
