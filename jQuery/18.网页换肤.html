@@ -66,22 +66,44 @@
         li:nth-child(1).active {
             background-position: 0 -15px;
         }
+
         li:nth-child(2).active {
             background-position: -100px -15px;
         }
+
         li:nth-child(3).active {
             background-position: -80px -15px;
         }
+
         li:nth-child(4).active {
             background-position: -60px -15px;
-        }li:nth-child(5).active {
+        }
+
+        li:nth-child(5).active {
             background-position: -40px -15px;
         }
+
         li:nth-child(6).active {
             background-position: -20px -15px;
         }
-
-        
+        .bg0{
+            background-color: #9a9a9a;
+        }
+        .bg1{
+            background-color: #ba3ad9;
+        }
+        .bg2{
+            background-color: #e11355;
+        }
+        .bg3{
+            background-color: #08b3ce;
+        }
+        .bg4{
+            background-color: #fba60a;
+        }
+        .bg5{
+            background-color: #afd400;
+        }
     </style>
 </head>
 
@@ -95,14 +117,19 @@
             <li></li>
             <li></li>
         </ul>
-        <div class="news">时事新闻</div>
-        <div class="news">娱乐新闻</div>
+        <div class="news bg0">时事新闻</div>
+        <div class="news bg0">娱乐新闻</div>
     </div>
 
     <script src="jquery-1.12.4.js"></script>
     <script>
-        $("li").on("click",function(){
+        $("li").on("click", function () {
+            //点击按钮 自己变色
             $(this).addClass("active").siblings().removeClass("active");
+            //news变色
+            $(this).index();
+            $(".news").attr('class','news bg' + $(this).index() );
+
 
         })
 
