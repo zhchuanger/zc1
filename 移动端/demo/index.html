@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="container">
+        <div class=" page page-1">
+            <img src="img.1/cover.png" class="img1 moveFromeTop">
+            <img src="img.1/wording_cover.png" class="img2 moveFromeLeft">
+            <img src="img.1/icon_up.png" class="common-img commonIcon">
+        </div>
+        <div class=" page page-2 hide">
+            <img class="img1 moveFromBottom hide " src="img.1/wording.png" />
+            <img class="img2 moveCircle hide " src="img.1/circle.png" />
+            <img class="img3 moveFromLeft hide  " src="img.1/people.png" />
+            <!-- <img class="img4" src="img/dot1.png" /> -->
+            <img class="img5 moveScale hide " src="img.1/check_develop.png" />
+            <img class="img6 common-img commonIcon hide " src="img.1/icon_up.png" />
+            <img class="img7 moveScale hide " src="img.1/floating_develop.png" />
+
+        </div>
+    </div>
+    <script src="../js/zepto.js"></script>
+    <script src="../js/touch.js"></script>
+    <script>
+        //当前的 划出来
+        var inow = 0;
+        // 划出去
+        var last = -1;
+        $(document).swipeUp(function () {
+            last = inow;
+            inow++;
+            if (inow <= $(".page").length-1) {
+                $(".page").eq(last).addClass(" moveToTop");
+                $(".page").eq(inow).removeClass(" hide").addClass("moveFromBottom");
+                setTimeout(function () {
+                    $(".page").eq(inow).find("img").removeClass("hide");
+                }, 600);
+            }
+
+
+
+
+
+        })
+
+        $(document).swipeDown(function () {
+            last = inow;
+            inow--;
+
+            if (inow >= 0) {
+                $(".page").eq(last).addClass(" moveToBottom");
+                $(".page").eq(inow).attr("class", 'page page-'+ (inow+1) +'moveFromTop')
+
+
+
+                setTimeout(function () {
+                    $(".page").eq(inow).find("img").removeClass("hide");
+                }, 600);
+            }
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
