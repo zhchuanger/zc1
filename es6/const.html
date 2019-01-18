@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* const 与 var区别 
+            1.let没有变量提升
+            2.块级作用域
+            3.不能重复声明
+            4.let暂时性死区 （临时失效区） 在当前作用域不允许有同名的变量进来
+        */
+        // const a=5;
+        // a=10;
+        // console.log(a);
+
+
+        const obj={
+            name:'zs'
+        }
+        // obj = {
+        //     name = "dsa"
+        // }
+        // console.log(obj);
+        Object.freeze(obj);//冻结使内容不能被改变 
+
+        obj.name = 'ls';
+        console.log(obj);
+        
+        
+        
+        
+    </script>
+    
+</body>
+</html>
