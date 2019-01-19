@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <Li>111</Li>
+        <Li>222</Li>
+        <Li>333</Li>
+    </ul>
+    <script>
+        /*扩展运算符 ...
+        1.复制数组
+        2.作为数组一部分
+        3.合并数组和对象
+        4.把类数组转化为数组
+        */
+
+        // let arr = [1,2,3];
+        // console.log(...arr);
+
+        // let arr2 = [...arr,4,5];
+        // console.log(arr2);
+
+        // let a3 = ['a','b','c'];
+        // let a4 = a3;
+        // a3[0] = 'd';
+        // console.log(a3,a4);
+
+        // let a5 =[...a3];
+        // a3[0] = 'd';
+        // console.log(a3,a5);
+
+        // let a6 = [1,2,3];
+        // let a7 = [4,5,6];
+        // let a8 = [...a6,...a7];
+        // console.log(a8);
+
+
+        var ali = document.getElementsByTagName("li");//类数组 节点列表
+        // ali.push('x');
+        // console.log(ali);
+
+
+        //类数组转换为数组
+        var arr = [...ali];
+        arr.push("vnsjkdv");
+        console.log(arr);
+
+
+        // let p1 = {
+        //     name:'zs',
+        //     age:20
+        // }
+        // let p3 ={
+        //     name:"lisi",
+        //     school:"weichuang"
+        // }
+        // let p2 ={...p3,...p1};
+        // let p2={
+        //     name:'liso'
+        // }
+        // let p2 = {...p1}
+        // console.log(p2);
+
+
+
+        //rest 运算符 返回剩余的
+        function fn(a,b,...rest) {
+            console.log(rest);
+
+        }
+        fn(1, 2, 3, 4, 5, 6);
+
+
+        //arguments 参数 类数组
+        //arguments.callee 函数自己
+        // function fn(){
+        //     console.log(arguments.callee);
+        // }
+        // fn(1,2,3,4,5,6);
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

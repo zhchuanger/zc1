@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+
+    </ul>
+    <script>
+        //类数组转换成数组
+        // var ali = document.getElementsByTagName("li");
+        // var a = Array.from(ali);
+        // a.push('ha');
+        // console.log(a);
+
+
+        // console.log( Array.of(3));
+
+
+        var arr = ['a','b','c','d','e','f','g'];
+        // // console.log(arr);
+        // // console.log( arr.copyWithin(0,3,6));//defdefg
+        // var result = arr.find(function(val,index){
+        //     // console.log(val,index);
+        //     return index>1;
+
+        // })
+        // console.log(result);//c 用于找出第一个符合条件的成员
+
+        // // console.log( arr.fill("xx",1,4));
+
+        for(var val of arr){
+            console.log(val);//输出内容
+        }
+        for(var index of arr.keys()){
+            console.log(index);//输出索引
+        }
+        for(var [index,val] of arr.entries()){
+            console.log(index,val);//输出 索引 内容
+        }
+
+
+        // 没有返回值，只是针对每个元素调用函数
+        arr.forEach(function( val,index){
+            console.log(val,index);
+        })
+
+        //返回原数组处理过得新数组
+        var result = arr.map(function( val,index){
+            // return val+"xx";
+            if(index>3){
+                return val+"xx";
+            }else{
+                return val+"yy";
+            }
+        });
+        console.log(result);
+
+        // var result1 = arr.filter(function(val,index){//过滤满足条件的元素
+        //     return index>1;
+        // })
+        // console.log(result1);
+
+        var arr1 = [
+            {
+                name:'zs',
+                age:10
+            },{
+                name:'ls',
+                age:20
+            },{
+                name:'ww',
+                age:15
+            },{
+                name:'xx',
+                age:30
+            }
+        ]
+        //返回过滤出的符合条件的新数组
+        var result2 = arr1.filter(function(obj,index){
+            return obj.age>18;
+        });
+
+        console.log(result2);
+
+        
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
