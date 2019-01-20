@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //定义类 属性写在构造函数中 方法写在原型下
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.say = function(){
+            console.log("我的名字是"+this.name);
+        }
+
+        // var person1 = new Person('zhangsan',20);
+        // person1.say();
+        // var person2 = new Person('lisi',30);
+        // person2.say();
+
+        
+        //子类中 通过父类.call(this) 继承属性
+        function Coder(name,age){
+            Person.call(this,name,age);//coder类把person类的name，age属性继承过来 
+            this.shirt = "格子";
+        }
+        //通过子类.prototype  = 父类的实例化对象 继承方法
+        Coder.prototype = new Person();
+        Coder.prototype.constructor = Coder;
+        var c1 = new Coder('小明',20);
+        c1.say();
+
+
+    
+
+
+
+
+
+
+    
+    
+    </script>
+    
+</body>
+</html>

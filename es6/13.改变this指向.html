@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // var obj = {
+        //     name:'zs',
+        //     eat:function(food){
+        //         console.log(this.name+'正在吃'+food);
+        //     }
+        // }    
+
+        // var obj2 = {
+        //     name:'lisi'
+        // }    
+
+        // /*
+        //     改变this指向  call(this指向,)
+        // */
+        // obj.eat('苹果');
+        // obj.eat.call(obj2,'香蕉');
+
+
+        function fn(a,b){
+            console.log(this,a,b);
+        }
+        fn('aaa','bbb');
+
+        var p1 = {
+            name:'zs'
+        }
+        
+        fn.call(p1,'aaa','bbb');
+        fn.apply(p1,['aaa','bbb']);
+        fn.bind(p1,'aaa','bbb')();
+
+
+
+
+
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../jquery/jquery-1.12.4.js"></script>
+    <script>
+        // 
+        // $.get('http://127.0.0.1/meituan/welcome/product?id=1',{
+        // },function(data){
+        //     // {name:'衣服','comment','001'}
+        //     var id = data.comment;
+        //     $.get('http://127.0.0.1/meituan/welcome/comment?commentid='+id,{
+
+        //     },function(data){
+        //         console.log(data);
+                
+        //     },'json');
+        // },'json')
+
+        /* promise 异步编程的一种解决方案，
+            比传统的解决方案——回调函数和事件——更合理和更强大
+        */
+
+        // 把异步的操作以同步的流程表示出来  resolve成功回调函数 =》then
+        // 失败调用reject() => catch/then第二个回调函数
+        var p1 = new Promise(function(resolve,reject){
+            // pending 
+            $.get('http://127.0.0.1/meituan/welcome/product?id=1',{
+            },function(data){
+                // reject();
+                resolve(data.comment);  //成功调用resolve pending=> fulfilled
+                //失败调用reject  pending => rejected
+            },"json");
+        });
+        p1.then(function(id){
+            // p1成功
+            let p2 = new Promise(function(resolve){
+                $.get('http://127.0.0.1/meituan/welcome/comment?commentid='+id,{
+                },function(data){
+                    console.log(data.title);
+                    resolve();
+                },'json');
+            })
+            return p2;
+        },function(){
+            console.log('p1失败');
+        }).then(function(){
+            console.log('p2成功');
+        },function(){
+            console.log('p2失败');
+        });
+
+
+
+
+
+
+        
+    
+    </script>
+
+
+</body>
+
+</html>
