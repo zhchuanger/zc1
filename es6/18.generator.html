@@ -59,18 +59,25 @@
             console.log('请求开始');
             let id = yield getPro();
             console.log("第一个请求完成  返回id"+id);
-            yield 
+            yield  getComments(id);
         }
         let g  = gen();
         g.next();
         function getPro(){
-            $.get('',{
+            $.get('http://127.0.0.1/meituan/welcome/product',{
                 id:1
             },function(data){
                 console.log(data.comment);
                 g.next(data.comment);
             },'json');
-
+        }
+        function getComments(){
+            $.get('http://127.0.0.1/meituan/welcome/product',{
+                comment:id
+            },function(data){
+                console.log(data);
+                g.next();
+            },'json');
         }
         
     
