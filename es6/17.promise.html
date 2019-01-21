@@ -28,13 +28,13 @@
         let p3 = new Promise(function (resolve, reject) {
             setTimeout(function () {
                 console.log('3 ok');
-                resolve();
+                reject();
             }, 1000);
         })
         let p1 = new Promise(function (resolve, reject) {
             setTimeout(function () {
                 console.log('1 ok');
-                resolve();
+                reject();
             }, 1000);
         })
         let p2 = new Promise(function (resolve, reject) {
