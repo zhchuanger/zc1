@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active {
+            background: #ff0036;
+        }
+
+        li {
+            width: 500px;
+            height: 50px;
+            background: green;
+            list-style: none;
+            margin: 10px auto;
+
+        }
+        span{
+            float: right;
+            padding: 10px 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+    
+        <ul>
+            <li v-for="obj in prolist" :class="{active:obj.isA}" @click="change(obj)">
+                {{obj.name}}
+                <span>{{obj.price}}</span>
+            </li>
+            <hr>
+            <h3>
+                total:{{total()}}
+            </h3>
+        </ul>
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                
+                prolist: [{
+                        isA: false,
+                        name: "aaa",
+                        price: 123
+                    },
+                    {
+                        isA: false,
+                        name: "bbb",
+                        price: 456
+
+                    },
+                    {
+                        isA: false,
+                        name: "ccc",
+                        price: 457
+                    },
+                    {
+                        isA: false,
+                        name: "ddd",
+                        price: 567
+                    },
+                    {
+                        isA: false,
+                        name: "eee",
+                        price: 789
+                    }
+                ],
+
+            },
+            methods: {
+                change(obj) {
+                    obj.isA = !obj.isA;
+                },
+                total(){
+                    let count = 0;
+                    // 遍历所有商品 找到被勾选的 价格相加
+                    this.prolist.forEach(function(obj,index){
+                        if(obj.isA){
+                            count+= obj.price;
+                        }
+                    })
+                    return count;
+                }
+            }
+
+        })
+    </script>
+
+
+</body>
+
+</html>

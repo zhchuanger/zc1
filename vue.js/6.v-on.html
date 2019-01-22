@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <div id="app">
+        <!-- @keyup.enter   @keyup.13    -->
         <input type="text" @keyup.enter="fn">
     </div>
     <script src="vue.js"></script>
     <script>
         var vm = new Vue({
-            el:"#app",
-            data:{
+            el: "#app",
+            data: {
 
             },
-            methods:{
-                fn(){
+            methods: {
+                fn() {
                     // if(event.keyCode ==13){
                     //     console.log("hahha");
                     // }
@@ -26,12 +29,13 @@
                 }
             }
         })
-    
-    
-    
-    
-    
+
+
+
+
+
     </script>
-    
+
 </body>
+
 </html>
