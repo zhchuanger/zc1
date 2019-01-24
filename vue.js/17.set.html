@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- vue不能通过索引控制数组 -->
+    <div id="app">
+        <button @click="change()">change</button>
+        <ul>
+            <Li v-for="val in arr">{{val}}</Li>
+        </ul>
+        <h2>{{total()}}</h2>
+        <h2>{{sum}}</h2>
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                arr: [1, 2, 3, 4]
+
+            },
+            methods: {
+                change() {
+                    // this.arr[1] = 666;
+                    Vue.set(this.arr,1,666);
+
+                },
+                total(){
+                    var count = 0;
+                    this.arr.forEach(function(val){
+                        count+=val;
+
+                    })
+                    return count;
+                }
+            },
+            computed: {
+                //属性
+                sum(){
+                    var count = 0;
+                    this.arr.forEach(function(val){
+                        count+=val;
+
+                    })
+                    return count;
+                }
+            },
+
+        })
+    </script>
+
+</body>
+
+</html>

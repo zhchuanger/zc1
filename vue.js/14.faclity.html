@@ -10,7 +10,7 @@
     <div id="app">
         <div>
             是否需要额外付费设施
-            <input type="checkbox" v-model="isCheck">
+            <input type="checkbox" v-model="isCheck" @click = "fn">
             <ul v-show="isCheck">
                 <li v-for="obj in payList">
                     {{obj.name}}（{{obj.price}}）
@@ -24,7 +24,7 @@
                 <li v-for="obj in orderList">{{obj.name}}({{obj.price}})</li>
             </ul>
         </div>
-        <div>总金额：400</div>
+        <div>总金额{{total()}}</div>
     </div>
     <script src="vue.js"></script>
     <script>
@@ -53,6 +53,17 @@
                         price:400
                     }
                 ]
+            },methods: {
+                total(){
+                    let count =0;
+                    this.orderList.forEach(function(obj){
+                        count+=obj.price;
+                    })
+                    return count;
+                },fn(){
+                    // this.orderList = this.orderList[0]；
+                    this.orderList.splice(1);
+                }
             }
         });
     
