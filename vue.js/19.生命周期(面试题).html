@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button @click = "msg++">add</button>
+        <button @click = "del()">del</button>
+        {{msg}}
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                msg: 0
+            },
+            methods: {
+                del(){
+                    vm.$destroy();
+                }
+            },
+            //所有属性都没有
+            beforeCreate() {
+                console.log(this.$data, this.$el);
+            },
+            //属性已经绑定 DOM还未生成 el属性不存在
+            created() {
+                console.log(this.$data, this.$el);
+            },
+            //属性初始化完成 但是没有挂载
+            beforeMount() {
+                console.log(this.$data, this.$el);
+            },
+            //挂载上
+            mounted() {
+                console.log(this.$data, this.$el);
+            },
+            //属性更新之前
+            beforeUpdate() {
+                // console.log(this.$el);
+                console.log("beforeUpdat")
+            },
+            //属性更新之后
+            updated() {
+                // console.log(this.$el);
+                console.log("updated")
+            },
+            //销毁实例之前
+            beforeDestroy() {
+                console.log("beforeDestroy");
+            },
+            //之后
+            destroyed() {
+                console.log("  destroyed");
+            },
+
+        })
+    </script>
+
+</body>
+
+</html>
