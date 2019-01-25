@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <weichuang></weichuang>
+        <myc></myc>
+        <myc2></myc2>
+    </div>
+    <div id="app1">
+        <weichuang></weichuang>
+        <myc2></myc2>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        // 全局组件
+        Vue.component('weichuang',{
+            template:'<h2>哈哈</h2>'
+        });
+        var vm = new Vue({
+            el:"#app",
+            data:{
+            },
+            components:{
+                'myc':{
+                    template:"<h3>myC</h3>"
+                },
+                'myc2':{
+                    template:'<p>哈哈哈哈哈哈</p>'
+                }
+            }
+        });
+        var vm1 = new Vue({
+            el:"#app1",
+            data:{
+
+            }
+        });
+
+    
+    
+    </script>
+</body>
+</html>

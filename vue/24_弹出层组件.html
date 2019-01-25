@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 300px;
+            height:400px;
+            border:1px solid #000;
+        }
+        .title span{
+            float:right;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="showLogin()">登录</button>
+        <button @click="showReg()">注册</button>
+        <mydialog title="登录" v-show="isLogin"  @xx="hide">
+            <label for="username">用户名</label>
+            <input id="username" type="text" placeholder="请输入用户名">
+            <br>
+            <label for="pwd">密码</label>
+            <input id="pwd" type="text" placeholder="请输入密码">
+            <br>
+            <button>登录</button>
+        </mydialog>
+        <mydialog title="注册" v-show="isReg"  @xx="hide">
+            <label for="username">用户名</label>
+            <input id="username" type="text" placeholder="请输入用户名">
+            <br>
+            <label for="pwd">密码</label>
+            <input id="pwd" type="text" placeholder="请输入密码">
+            <br>
+            <label for="pwd">确认密码</label>
+            <input id="pwd" type="text" placeholder="请输入确认密码">
+            <br>
+            <button>注册</button>
+        </mydialog>
+    </div>
+    <template id="temp">
+        <div class="container">
+            <div class="title">
+                {{title}}
+                <!-- <span @click="hide(title)">[X]</span> -->
+                <span @click="$emit('xx',title)">[X]</span>
+            </div>
+            <hr>
+            <div class="content">
+                <slot></slot>
+            </div>
+        </div>
+    </template>
+    <!-- 
+        父组件向子组件  props
+        子组件向父组件传值  $emit('事件','参数')
+    -->
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                isLogin:false,
+                isReg:false
+            },
+            methods:{
+                showLogin(){
+                    this.isLogin = true;
+                    this.isReg = false;
+                },
+                showReg(){
+                    this.isLogin = false;
+                    this.isReg = true;
+                },
+                hide(title){
+                    this.isLogin = false;
+                    this.isReg = false;
+                    console.log(title);
+                }
+            },
+            components: {
+                'mydialog':{
+                    template:"#temp",
+                    props:['title']
+                }
+            }
+        })
+    
+    </script>
+
+    
+</body>
+</html>
