@@ -1,7 +1,13 @@
-#div2{
-    /* background: pink; */
-    width: 200px;
-    height: 200px;
-    background: url(img/cef8966ddc021ecfa94f005caaf89f60.jpg);
+/*! 唯创 */
+#div1 {
+  background: red;
+}
 
+#div2 {
+  /* background: pink; */
+  width: 1000px;
+  height: 500px;
+  background: url(img/cef8966ddc021ecfa94f005caaf89f60.jpg) 0 0 no-repeat;
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
 }

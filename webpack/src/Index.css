@@ -1,7 +1,11 @@
 #div2{
     /* background: pink; */
-    width: 200px;
-    height: 200px;
-    background: url(img/h.jpg);
+    width: 1000px;
+    height: 500px;
+    background: url("img/h.jpg") 0 0 no-repeat;
+    transform: rotate(30deg);
 
+}
+.aa{
+    background: pink;
 }
