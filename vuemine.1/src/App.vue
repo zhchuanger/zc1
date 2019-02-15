@@ -26,7 +26,7 @@
             {
               path:"/music",
               name:"音乐",
-              bgColor:"#e9f460"
+              bgColor:"#f9ff4e"
             },
             {
               path:"/book",

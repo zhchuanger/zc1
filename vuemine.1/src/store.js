@@ -12,8 +12,7 @@ export default new Vuex.Store({
   mutations: {
     change(state,obj){
       state.color = obj.bgColor;
-      state.name = obj.name;
-    }
+      state.name = obj.name;    }
 
   },
   actions: {
