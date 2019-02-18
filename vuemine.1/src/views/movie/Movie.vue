@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul class="container">
-            <li v-for="(obj,index) in movieList" :key="index">
+            <li v-for="(obj,index) in movieList" :key="index"  @click="godetail(obj.id)">
                 <img :src="obj.images.small" alt="">
                 <div class="info">
                     <h3>{{obj.title}}</h3>
@@ -74,6 +74,9 @@
             })
             .catch();
 
+            },
+            godetail(id){
+                this.$router.push('/moviedetail/'+id)
             }
         },
 
@@ -110,8 +113,8 @@ h3{
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    width: 1rem;
-    height: 1rem;
+    width: 0.5rem;
+    height: 0.5rem;
 }
 .words{
     text-align: center;

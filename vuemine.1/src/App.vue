@@ -26,17 +26,17 @@
             {
               path:"/music",
               name:"音乐",
-              bgColor:"#f9ff4e"
+              bgColor:"#4abce8"
             },
             {
               path:"/book",
               name:"图书",
-              bgColor:"#4abce8"
+              bgColor:"#f4b245"
             },
             {
               path:"/photo",
               name:"图片",
-              bgColor:"#46f14d"
+              bgColor:"#66d516"
 
           }
           ],
