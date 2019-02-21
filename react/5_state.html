@@ -18,40 +18,35 @@
     <script type="text/babel">
     //state 是一个对象 可以存储多个值
     //取state this.state.num
-    //修改state this.setState.num  自定义 的方法中this undefined
+    //修改state this.setState.num  
+    //自定义的方法中this undefined  需要bind()改变this指向
 
         class Count extends React.Component{
-            constructor(props) {
+            constructor(props){
                 super(props),
                 this.state ={
                     num:1
                 }
-                this.addHandle =  this.addHandle.bind(this);
-
+                this.addHandle = this.addHandle.bind(this);
             }
             addHandle(){
-                // this.state.num++;
+                // console.log(this);
                 this.setState({
-                    num:++this.state.num
+                    num:"2"
                 })
                 
-
             }
             render() {
                 return (
                     <div>
-                        <h1>{ this.state.num }</h1>
-                        <button onClick={ this.addHandle}>add</button>
-                        
-                        
+                        <h1>{this.state.num}</h1>
+                        <button onClick={ this.addHandle }>add</button>
                     </div>
                 )
-                    
-                
                 
             }
         }
-        ReactDOM.render(<Count></Count>,document.getElementById('root'))
+        ReactDOM.render(<Count></Count>,document.getElementById("root"))
 
 
 
