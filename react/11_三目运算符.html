@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+    </style>
 </head>
 
 <body>
@@ -16,42 +18,39 @@
     <script src="react-dom.development.js"></script>
     <script src="browser.min.js"></script>
     <script type="text/babel">
-    //state 是一个对象 可以存储多个值
-    //取state this.state.num
-    //修改state this.setState.num  
-    //自定义的方法中this undefined  需要bind()改变this指向
-
-        class Count extends React.Component{
-            constructor(props){
-                super(props),
-                this.addHandle = this.addHandle.bind(this);
-                this.state ={
-                    num:1
+        class MyComponent extends React.Component{
+            constructor(params){
+                super(params);
+                this.state = {
+                    isshow:true
                 }
-            }
-            addHandle(){
-                // console.log(this);
-                this.setState({
-                    num:"2"
-                })
+                this.change = this.change.bind(this)
                 
             }
+            change(){
+                this.setState({
+                    isshow:!this.state.isshow
+                })
+
+            }
+    
             render() {
                 return (
                     <div>
-                        <h1>{this.state.num}</h1>
-                        <button onClick={ this.addHandle }>add</button>
+                        <h1>哈哈</h1>
+                        {
+                            this.state.isshow? <div>呵呵呵呵呵</div>:null
+                        }
+                        <button onClick={this.change}>click</button>
                     </div>
                 )
                 
             }
         }
-        ReactDOM.render(<Count></Count>,document.getElementById("root"))
+        ReactDOM.render(<MyComponent></MyComponent>,document.getElementById("root"))
 
+    
 
-
-        
-        
         
     </script>
 
