@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        class Main extends React.Component{
+            constructor(params){
+                super(params);
+                this.state={
+                    opacity:0.5
+                }
+            }
+            //组件刚要挂载
+            componentWillMount(){
+                setInterval(() => {
+                    if(this.state.opacity <=0){
+                        this.setState({
+                        opacity:1
+                        })
+                    }else{
+                        this.setState({
+                        opacity:this.state.opacity-0.1
+                        })
+                    }
+                    
+                    
+                    
+                }, 200);
+            }    
+            componentWillUpdate(nextProps, nextState){
+                console.log('componentWillUpdate',nextProps,nextState);
+            }
+            componentDidUpdate(nextProps, nextState){
+                console.log('componentDidUpdate',nextProps,nextState);
+            }
+            unmount(){
+                ReactDOM.unmountComponentAtNode(document.getElementById('root'));
+            }
+            componentWillUnmount(){
+                clearInterval(this.timer);
+            }
+            render(){
+                let {opacity} = this.state;
+                return (
+                    <div>
+                        <h1 style={{opacity}}>哈哈哈哈哈</h1>
+                        <button onClick={this.unmount}>stop</button>
+                        
+                    </div>
+                    
+                )
+            }
+        }
+
+        ReactDOM.render(<Main></Main>,document.getElementById('root'))
+
+
+
+    
+
+        
+    </script>
+
+
+
+</body>
+
+</html>
