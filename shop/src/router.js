@@ -4,14 +4,14 @@ import Home from './views/Home.vue'
 import Category from './views/Category.vue'
 import Cart from './views/Cart.vue'
 import Mine from './views/Mine.vue'
-``
+
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/', 
       name: 'home',
       component: Home
     },{
