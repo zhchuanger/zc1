@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <!-- 导航栏 -->
       <van-nav-bar title="首页" class="nav-title">
           <van-icon name="search" slot="left"></van-icon>
@@ -102,6 +102,9 @@ export default {
 
 
 <style lang="scss">
+.container{
+  background-color: #eee;
+}
 body{
   height: 2000px;
 
@@ -126,6 +129,9 @@ body{
     }
   }
 .hot{
+  margin-top: 0.2rem;
+  background-color: #fff;
+
   &-title{
     width: 100%;
     height: 0.5rem;
