@@ -28,9 +28,18 @@
                   
                 </div>
               </swiper-slide>
-
-
           </swiper>
+      </div>
+      <!-- 推荐商品 -->
+      <div class="variety">
+        <p>推荐商品</p>
+        <ul>
+          <li class="variety-item" v-for="(item,index) in varietyItem" :key="index">
+              <img :src="item.img" alt="">
+              <p>{{item.name}}</p>
+              <p>￥{{item.price}}</p>
+          </li>
+        </ul>
       </div>
 
   </div>
@@ -88,19 +97,54 @@ export default {
         }
       ], swipeOption:{
         slidesPerView:3
-      }
+      },
+      //推荐商品
+      varietyItem:[
+        {
+          name:"老好吃了",
+          img:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551192174548&di=95689c26f3788cc0085ec13dc5b363c6&imgtype=0&src=http%3A%2F%2Fpic4.photophoto.cn%2F20070707%2F0042040244609065_b.jpg",
+          price:"12",
+          food:"大虾",
+          city:"Italy"
+        },{ 
+          name:"老好吃了",
+          img:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551192174548&di=95689c26f3788cc0085ec13dc5b363c6&imgtype=0&src=http%3A%2F%2Fpic4.photophoto.cn%2F20070707%2F0042040244609065_b.jpg",
+          price:"12",
+          food:"大虾",
+          city:"Italy"
+
+        },{ 
+          name:"老好吃了",
+          img:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551192174548&di=95689c26f3788cc0085ec13dc5b363c6&imgtype=0&src=http%3A%2F%2Fpic4.photophoto.cn%2F20070707%2F0042040244609065_b.jpg",
+          price:"12",
+          food:"大虾",
+          city:"Italy"
+
+        },{ 
+          name:"老好吃了",
+          img:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551192174548&di=95689c26f3788cc0085ec13dc5b363c6&imgtype=0&src=http%3A%2F%2Fpic4.photophoto.cn%2F20070707%2F0042040244609065_b.jpg",
+          price:"12",
+          food:"大虾",
+          city:"Italy"
+
+        }
+
+
+      ]
     }
   },
   components:{
     swiper,
     swiperSlide
 
+  },
+  created() {
+    
+    
   }
 
-}
-</script>
-
-
+};
+</script> 
 <style lang="scss">
 .container{
   background-color: #eee;
@@ -147,5 +191,24 @@ body{
     }
   }
 }
-  
+  // 热门商品
+  .variety{
+    margin-top: 0.2rem;
+    background-color: #fff;
+    text-align: center;
+    margin-bottom: 1rem; 
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    &-item{
+      flex-basis: 45%;
+    }
+    img{
+      width: 2rem;
+      height: 2rem;
+    }
+
+  }
 </style>
