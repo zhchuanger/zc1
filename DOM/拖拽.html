@@ -19,7 +19,7 @@
             position: absolute;
             left: 0;
             top: 0;
-            s
+            
         }
     </style>
 </head>
@@ -34,8 +34,6 @@
             document.onmousemove = function (e) {
                 odiv.style.left = e.clientX - disx + "px";
                 odiv.style.top = e.clientY - disy + "px";
-
-
             }
             document.onmouseup = function () {
                 document.onmousemove = null;
